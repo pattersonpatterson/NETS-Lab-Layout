@@ -48,8 +48,8 @@ for key,val in alphaconvert.iteritems():
     df['xpos'][df.xpos==key] = val
 
 # Set x-y ranges
-x_range = [str(x) for x in df.xpos]
-y_range = [str(y) for y in df.ypos]
+x_range = [str(x) for x in range(1,19)]
+y_range = [str(y) for y in range(1,36)]
 
 # Map fill colors to subsystem type
 colormap= {
