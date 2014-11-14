@@ -48,8 +48,8 @@ for key,val in alphaconvert.iteritems():
     df['xpos'][df.xpos==key] = val
 
 # Set x-y ranges
-x_range = [str(x) for x in range(1,19)]
-y_range = [str(y) for y in range(1,36)]
+x_range = [str(x) for x in df.xpos]
+y_range = [str(y) for y in df.ypos]
 
 # Map fill colors to subsystem type
 colormap= {
@@ -83,7 +83,7 @@ source = ColumnDataSource(
 bk.hold()
 # Make a rect glyph for each element of data
 bk.rect("posx", "posy", 0.9, 0.9, source=source,
-    # x_range=x_range, y_range=y_range,
+    x_range=x_range, y_range=y_range,
     line_color="color_type", line_cap='round',
     fill_alpha=0.6, color="color_type",
     tools="resize,hover,previewsave,ywheel_zoom", title="ESS Lab Layout",
