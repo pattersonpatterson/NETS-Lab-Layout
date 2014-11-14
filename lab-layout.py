@@ -83,10 +83,11 @@ source = ColumnDataSource(
 bk.hold()
 # Make a rect glyph for each element of data
 bk.rect("posx", "posy", 0.9, 0.9, source=source,
-    x_range=x_range, y_range=y_range,
+    # x_range=x_range, y_range=y_range,
+    line_color="color_type", line_cap='round',
     fill_alpha=0.6, color="color_type",
     tools="resize,hover,previewsave,ywheel_zoom", title="ESS Lab Layout",
-    plot_width=1200
+    plot_width=1600, plot_height=3200
 )
 
 # Use text_props = dict to set properties of text elements
